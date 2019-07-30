@@ -6,3 +6,6 @@
 
 - set_fact:
     bill_something: 111
+
+- set_fact:
+    new_lint_error: true
