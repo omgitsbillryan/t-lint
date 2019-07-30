@@ -29,9 +29,15 @@ pipeline {
       post {
         always {
           recordIssues enabledForFailure: true,
+            blameDisabled: true,
             tool: ansibleLint(pattern: lint_output_file),
             qualityGates: [[threshold: 1, type: 'NEW']]
         }
+      }
+    }
+    stage('Donezo') {
+      steps {
+        sh "echo 'Donezo.'"
       }
     }
   }
