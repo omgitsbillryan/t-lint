@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+  vars:
+    variable1: 'Hello...!!!'
+    variable2: 'Blahhh'
+  tasks:
+    - debug:
+        msg: "yo yo yo"
+    - name: Basic Template Example
+      template:
+        src: bill_example.txt.j2
+        dest: bill_example.txt
+
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  roles:
+    - { role: bill }

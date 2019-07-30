@@ -1,0 +1,8 @@
+- set_fact:
+    bill_version: 1.7.9
+
+- debug:
+    msg: "hhere is some stuff!! {{ bill_version }}"
+
+- set_fact:
+    bill_something: 111
