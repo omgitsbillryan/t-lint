@@ -28,8 +28,7 @@ pipeline {
       }
       post {
         always {
-          recordIssues 
-            enabledForFailure: true,
+          recordIssues enabledForFailure: true,
             ignoreFailedBuilds: false,
             blameDisabled: true,
             tool: ansibleLint(pattern: lint_output_file),
