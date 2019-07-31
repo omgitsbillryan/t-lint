@@ -11,3 +11,16 @@
 - name: "Set another fact"
   set_fact:
     new_lint_error: true
+
+- set_fact:
+    fact1: true
+
+- set_fact:
+    fact2: true
+
+- set_fact:
+    fact3: true
+
+- set_fact:
+    fact4: true
+
