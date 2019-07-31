@@ -28,12 +28,18 @@ pipeline {
       }
       post {
         always {
-          recordIssues enabledForFailure: true,
-            ignoreFailedBuilds: false,
-            blameDisabled: true,
-            tool: ansibleLint(pattern: lint_output_file),
-            qualityGates: [[threshold: 1, type: 'NEW']],
-            referenceJobName: 'Testing/t-lint/master'
+          script {
+            lint_options = [
+              enabledForFailure: true, 
+              blameDisabled: true,
+              tool: ansibleLint(pattern: lint_output_file),
+              referenceJobName: 'Testing/t-lint/master'
+            ]
+            if (env.BRANCH_NAME != 'master') {
+              lint_options << qualityGates: [[threshold: 1, type: 'NEW']]
+            }
+          }
+          recordIssues lint_options
         }
       }
     }
