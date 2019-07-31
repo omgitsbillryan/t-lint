@@ -36,7 +36,7 @@ pipeline {
               referenceJobName: 'Testing/t-lint/master'
             ]
             if (env.BRANCH_NAME != 'master') {
-              lint_options << qualityGates: [[threshold: 1, type: 'NEW']]
+              lint_options << [qualityGates: [[threshold: 1, type: 'NEW']]]
             }
           }
           recordIssues lint_options
