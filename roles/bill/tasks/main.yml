@@ -3,3 +3,11 @@
 
 - debug:
     msg: "hhere is some stuff!! {{ bill_version }}"
+
+- name: "Set bill something"
+  set_fact:
+    bill_something: 111
+
+- name: "Set another fact"
+  set_fact:
+    new_lint_error: true
