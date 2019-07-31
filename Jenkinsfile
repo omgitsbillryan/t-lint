@@ -28,10 +28,11 @@ pipeline {
       }
       post {
         always {
-          recordIssues enabledForFailure: true,
+          recordIssues enabledForFailure: false,
             blameDisabled: true,
             tool: ansibleLint(pattern: lint_output_file),
-            qualityGates: [[threshold: 1, type: 'NEW']]
+            qualityGates: [[threshold: 1, type: 'NEW']],
+            referenceJobName: 'Testing/t-lint/master'
         }
       }
     }
