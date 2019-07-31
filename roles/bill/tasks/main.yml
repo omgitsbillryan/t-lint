@@ -12,7 +12,8 @@
   set_fact:
     new_lint_error: true
 
-- set_fact:
+- name: "Fix 1 warning"
+  set_fact:
     fact1: true
 
 - set_fact:
