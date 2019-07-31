@@ -3,6 +3,3 @@
 
 - debug:
     msg: "hhere is some stuff!! {{ bill_version }}"
-
-- set_fact:
-    bill_something: 111
