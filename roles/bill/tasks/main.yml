@@ -16,7 +16,8 @@
   set_fact:
     fact1: true
 
-- set_fact:
+- name: "Fix fact2"
+  set_fact:
     fact2: true
 
 - set_fact:
