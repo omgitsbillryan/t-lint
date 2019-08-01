@@ -26,7 +26,6 @@
 - set_fact:
     fact4: true
 
-# - name: "Fix fact 5"
-#   set_fact:
-#     fact5: true
+- set_fact:
+    fact5: true
 
