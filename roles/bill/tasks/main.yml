@@ -23,8 +23,7 @@
 - set_fact:
     fact3: true
 
-- name: "Fix fact4"
-  set_fact:
+- set_fact:
     fact4: true
 
 # - name: "Fix fact 5"
