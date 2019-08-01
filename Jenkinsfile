@@ -29,7 +29,7 @@ pipeline {
       post {
         always {
           script {
-            quality_gate = (env.BRANCH_NAME == 'master') ? [] : [[threshold: 1, type: 'NEW']]
+            quality_gate = (env.BRANCH_NAME == 'master') ? [] : [[threshold: 1, type: 'DELTA']]
           }
           recordIssues enabledForFailure: true, 
               blameDisabled: true,
