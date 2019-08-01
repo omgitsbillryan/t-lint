@@ -25,3 +25,6 @@
 - set_fact:
     fact4: true
 
+- set_fact:
+    fact5: true
+
