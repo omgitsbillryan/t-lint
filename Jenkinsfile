@@ -10,12 +10,12 @@ pipeline {
       }
     }
 
-    stage('Create virtualenv') {
-      steps {
-        sh 'virtualenv venv'
-        sh 'venv/bin/python -m pip install -r requirements.txt'
-      }
-    }
+    // stage('Create virtualenv') {
+    //   steps {
+    //     sh 'virtualenv venv'
+    //     sh 'venv/bin/python -m pip install -r requirements.txt'
+    //   }
+    // }
 
     // stage('Lint Ansible') {
     //   steps {
