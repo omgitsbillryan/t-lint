@@ -10,6 +10,15 @@ pipeline {
       }
     }
 
+    stage('Check for dangerous db migrations') {
+      steps {
+        script { 
+          changed_files = sh(returnStdout: true, script: "git whatchanged --name-only --pretty=\"\" origin..HEAD").trim()
+        }
+        echo "changes_files = ${changed_files}"
+      }
+    }
+
     // stage('Create virtualenv') {
     //   steps {
     //     sh 'virtualenv venv'
