@@ -12,6 +12,7 @@ pipeline {
 
     stage('Print stuff') {
       steps {
+        echo 'Inside testbranch'
         echo sh(script: 'env|sort', returnStdout: true)
       }
     }
