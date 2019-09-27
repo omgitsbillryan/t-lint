@@ -12,7 +12,7 @@ pipeline {
 
     stage('Print stuff') {
       steps {
-        sh 'printenv'
+        echo sh(script: 'env|sort', returnStdout: true)
       }
     }
 
