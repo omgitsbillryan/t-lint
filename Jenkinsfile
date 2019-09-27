@@ -10,12 +10,9 @@ pipeline {
       }
     }
 
-    stage('Check for dangerous db migrations') {
+    stage('Print stuff') {
       steps {
-        script { 
-          changed_files = sh(returnStdout: true, script: "git whatchanged --name-only --pretty=\"\" origin..HEAD").trim()
-        }
-        echo "changes_files = ${changed_files}"
+        sh 'printenv'
       }
     }
 
