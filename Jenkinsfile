@@ -12,7 +12,7 @@ pipeline {
 
     stage('Print stuff') {
       steps {
-        echo 'Inside testbranch'
+        echo 'Inside anotherbranch'
         echo "the change id..... ${env.CHANGE_ID}"
         echo sh(script: 'env|sort', returnStdout: true)
       }
