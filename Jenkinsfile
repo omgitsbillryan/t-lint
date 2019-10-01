@@ -18,8 +18,9 @@ pipeline {
     }
 
     stage('Test if pull request') {
+      when { changeRequest() }
+      
       steps {
-        when { changeRequest() }
         echo "INSIDE A CHANGE REQUEST"
       }
     }
