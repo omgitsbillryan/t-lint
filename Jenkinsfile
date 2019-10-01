@@ -26,6 +26,22 @@ pipeline {
       }
     }
 
+    stage('Run for branch master') {
+      when { branch 'master' }
+
+      steps {
+        echo "MASTER BRANCH YO"
+      }
+    }
+
+    stage('Run for NOT branch master') {
+      when { not { branch 'master' } }
+
+      steps {
+        echo "NOT MASTER!!!!"
+      }
+    }
+
     stage('Donezo') {
       steps {
         sh "echo 'Donezo.'"
