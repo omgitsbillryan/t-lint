@@ -5,14 +5,13 @@ pipeline {
   stages {
     stage('Checkout Code') {
       steps {
-        sh "echo 'starting it up!!!!'"
         checkout scm
       }
     }
 
     stage('Print stuff') {
       steps {
-        echo 'Inside testbranch'
+        echo 'Inside branch3'
         echo "the change id..... ${env.CHANGE_ID}"
         echo sh(script: 'env|sort', returnStdout: true)
       }
