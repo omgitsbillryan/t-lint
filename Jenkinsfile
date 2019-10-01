@@ -13,13 +13,14 @@ pipeline {
       steps {
         echo 'Inside branch3'
         echo "the change id..... ${env.CHANGE_ID}"
+        echo "BRANCH_NAME....... ${env.BRANCH_NAME}"
         echo sh(script: 'env|sort', returnStdout: true)
       }
     }
 
     stage('Test if pull request') {
       when { changeRequest() }
-      
+
       steps {
         echo "INSIDE A CHANGE REQUEST"
       }
