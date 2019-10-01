@@ -18,6 +18,13 @@ pipeline {
       }
     }
 
+    stage('Test if pull request') {
+      steps {
+        when { changeRequest() }
+        echo "INSIDE A CHANGE REQUEST"
+      }
+    }
+
     stage('Donezo') {
       steps {
         sh "echo 'Donezo.'"
