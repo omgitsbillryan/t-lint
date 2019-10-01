@@ -42,6 +42,19 @@ pipeline {
       }
     }
 
+    stage('Check stuff') {
+      when {
+        anyOf {
+          branch 'master'
+          branch 'branch5'
+        }
+      }
+
+      steps {
+        echo "Inside branch master or branch5"
+      }    
+    }
+
     stage('Donezo') {
       steps {
         sh "echo 'Donezo.'"
