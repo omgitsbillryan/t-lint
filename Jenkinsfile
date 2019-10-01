@@ -5,7 +5,7 @@ pipeline {
   stages {
     stage('Checkout Code') {
       steps {
-        sh "Echo some danger branch"
+        echo "some danger branch"
         sh "echo 'starting it up!!!!'"
         checkout scm
       }
