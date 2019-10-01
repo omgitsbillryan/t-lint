@@ -5,23 +5,40 @@ pipeline {
   stages {
     stage('Checkout Code') {
       steps {
-        sh "echo 'starting it up!!!!'"
         checkout scm
       }
     }
 
     stage('Print stuff') {
       steps {
-        echo 'Inside testbranch'
+        echo 'Inside branch3'
         echo "the change id..... ${env.CHANGE_ID}"
+        echo "BRANCH_NAME....... ${env.BRANCH_NAME}"
         echo sh(script: 'env|sort', returnStdout: true)
       }
     }
 
     stage('Test if pull request') {
+      when { changeRequest() }
+
       steps {
-        when { changeRequest() }
         echo "INSIDE A CHANGE REQUEST"
+      }
+    }
+
+    stage('Run for branch master') {
+      when { branch 'master' }
+
+      steps {
+        echo "MASTER BRANCH YO"
+      }
+    }
+
+    stage('Run for NOT branch master') {
+      when { not { branch 'master' } }
+
+      steps {
+        echo "NOT MASTER!!!!"
       }
     }
 
