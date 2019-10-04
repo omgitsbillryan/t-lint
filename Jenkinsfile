@@ -3,7 +3,7 @@ pipeline {
   agent any
 
   environment {
-    THE_BRANCH = (env.BRANCH_NAME != null) ? env.BRANCH_NAME : env.CHANGE_BRANCH
+    THE_BRANCH = env.BRANCH_NAME
   }
 
   stages {
