@@ -23,5 +23,5 @@ jobs:
         with:
           url: "http://localhost:8080/<some_path>"
           user: "admin"
-          token: "billryanisthebest"
+          token: ${{ secrets.TEST_JENKINS_SECRET }}
           job: "bill-test"
