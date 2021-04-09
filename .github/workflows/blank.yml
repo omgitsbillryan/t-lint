@@ -18,10 +18,12 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Run jenkins trigger
-        uses: appleboy/jenkins-action@master
-        with:
-          url: "http://localhost:8080/<some_path>"
-          user: "admin"
-          token: ${{ secrets.TEST_JENKINS_SECRET }}
-          job: "bill-test"
+      - name: Test connectivity
+        run: curl http://73.167.220.157:8082/status
+#       - name: Run jenkins trigger
+#         uses: appleboy/jenkins-action@master
+#         with:
+#           url: "http://localhost:8080/<some_path>"
+#           user: "admin"
+#           token: ${{ secrets.TEST_JENKINS_SECRET }}
+#           job: "bill-test"
