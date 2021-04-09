@@ -20,6 +20,14 @@ jobs:
 
       - name: Test connectivity
         run: curl http://73.167.220.157:8082/status
+  
+      - name: trigger single Job
+        uses: appleboy/jenkins-action@master
+        with:
+          url: "http://73.167.220.157:8082"
+          user: "admin"
+          token: ${{ secrets.API_TOKEN }}
+          job: "foobar"
 #       - name: Run jenkins trigger
 #         uses: appleboy/jenkins-action@master
 #         with:
