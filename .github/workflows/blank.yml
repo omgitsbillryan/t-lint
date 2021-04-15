@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Test connectivity
-        run: curl https://dev.va.gov/status
+        run: curl https://dev.va.gov/jenkins/status
   
       - name: trigger single Job
         uses: appleboy/jenkins-action@master
