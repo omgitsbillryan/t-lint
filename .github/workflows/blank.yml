@@ -27,4 +27,4 @@ jobs:
           url: "http://73.167.220.157:8083/jenkins"
           user: ${{ secrets.LOCAL_API_USER }}
           token: ${{ secrets.LOCAL_API_TOKEN }}
-          job: "folder_1/job/bill-test-job"
+          job: "folder_1/bill-test-job"
