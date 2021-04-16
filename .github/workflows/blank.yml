@@ -18,20 +18,13 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Test connectivity
-        run: curl https://dev.va.gov/jenkins/status
+#       - name: Test connectivity
+#         run: curl https://dev.va.gov/jenkins/status
   
       - name: trigger single Job
         uses: appleboy/jenkins-action@master
         with:
-          url: "https://dev.va.gov/jenkins"
-          user: ${{ secrets.API_USER }}
-          token: ${{ secrets.API_TOKEN }}
-          job: "job/deploys/job/vets-website-vagovdev/build"
-#       - name: Run jenkins trigger
-#         uses: appleboy/jenkins-action@master
-#         with:
-#           url: "http://localhost:8080/<some_path>"
-#           user: "admin"
-#           token: ${{ secrets.TEST_JENKINS_SECRET }}
-#           job: "bill-test"
+          url: "http://73.167.220.157:8083/jenkins"
+          user: ${{ secrets.LOCAL_API_USER }}
+          token: ${{ secrets.LOCAL_API_TOKEN }}
+          job: "job/bill-test"
